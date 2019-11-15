@@ -10,19 +10,19 @@ VAR_OUTPUT				// Define output variable
 	salary : REAL;
 END_VAR
 
-FUZZIFY experience		// [years of experience [0-10]]
+FUZZIFY experience		// [criteria for experience in year [0-10] ]
 	TERM junior := (0, 1) (2, 1) (3,0) ;
 	TERM mid_level := (2, 0) (3, 1) (4, 1) (5, 1) (6, 0) ;
 	TERM senior := (5, 0) (6, 1) (7, 1)(8, 0) ;
 END_FUZZIFY
 
-FUZZIFY coding_skill         // [ points of 0-10 ]
+FUZZIFY coding_skill         // [criteria for coding_skill in points of 0-10 ]
     TERM poor := (0, 1) (2, 1) (4, 0);
     TERM average := (2, 0) (4, 1) (6, 1) (8, 0);
     TERM great := (7, 0) (8, 1) (10, 1);
 END_FUZZIFY
 
-FUZZIFY soft_skills         // [ points of 0-10 ]
+FUZZIFY soft_skills         // [ criteria soft_skills points of 0-10 ]
     TERM poor := (0, 1) (3, 0);
     TERM good := (2, 0) (4, 1) (6, 1) (8, 0);
     TERM great := (6, 0)(7, 1) (8, 1) (10, 1);
@@ -47,9 +47,9 @@ RULEBLOCK No1
 	RULE 4 : IF experience IS junior AND soft_skills is great THEN salary IS medium_wages;
 	RULE 5 : IF experience IS senior AND coding_skill IS great  THEN salary IS high_wages;
 	RULE 6 : IF experience IS mid_level AND coding_skill IS great AND soft_skills IS great THEN salary IS high_wages;
-    RULE 7 : IF experience IS junior OR coding_skill IS great THEN salary IS medium_wages;
-    RULE 8 : IF experience IS junior OR coding_skill IS average AND soft_skills IS good THEN salary IS medium_wages;
-    RULE 9 : IF experience IS junior OR coding_skill IS poor AND soft_skills IS great THEN salary IS medium_wages;
+    	RULE 7 : IF experience IS junior OR coding_skill IS great THEN salary IS medium_wages;
+    	RULE 8 : IF experience IS junior OR coding_skill IS average AND soft_skills IS good THEN salary IS medium_wages;
+    	RULE 9 : IF experience IS junior OR coding_skill IS poor AND soft_skills IS great THEN salary IS medium_wages;
 
 
 END_RULEBLOCK
