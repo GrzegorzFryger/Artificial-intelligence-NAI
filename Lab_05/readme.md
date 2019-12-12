@@ -70,9 +70,8 @@ SIGMOID
        macro avg       0.62      0.66      0.63        81
     weighted avg       0.73      0.79      0.75        81
 
-TEST DATA 
+PREDICTED DATA 
 
-Test data
 
 
                 lp   STG   SCG   STR   LPR   PEG   RES
