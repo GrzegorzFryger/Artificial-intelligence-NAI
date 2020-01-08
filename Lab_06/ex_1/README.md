@@ -16,6 +16,8 @@
     Model 1 result loss: 0.146429
     Model 1 final accuracy: 0.933333
 
+   ![alt text](https://github.com/GrzegorzFryger/NAI/blob/master/Lab_06/ex_1/1.png)
+
 
     Model: "MODEL2"
     _________________________________________________________________
@@ -41,7 +43,7 @@
     Model 2 result loss: 0.189695
     Model 2 final accuracy: 0.933333
 
-
+   ![alt text](https://github.com/GrzegorzFryger/NAI/blob/master/Lab_06/ex_1/2.png)
 
     Model: "MODEL3"
     _________________________________________________________________
@@ -69,8 +71,17 @@
     Model 3 result loss: 0.151786
     Model 3 final accuracy: 0.900000
     
+   ![alt text](https://github.com/GrzegorzFryger/NAI/blob/master/Lab_06/ex_1/3.png)
+    
     ------------------Predict data--------------------------
     
     Model 1 result predict:[[0.00 0.23 0.77]]
     Model 2 final predict:[[0.00 0.03 0.97]]
     Model 3 final predict:[[0.00 0.63 0.37]]
+    
+    
+    
+   ![alt text](https://github.com/GrzegorzFryger/NAI/blob/master/Lab_06/ex_1/iris_plot.png)    
+   
+    
+    
