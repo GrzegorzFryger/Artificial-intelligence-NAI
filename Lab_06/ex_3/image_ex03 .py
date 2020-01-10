@@ -7,8 +7,14 @@ Original file is located at
     https://colab.research.google.com/drive/1glIFdNT20bar8MgFISOLAzY1gvnNkHbH
 """
 
+def printCostPlot(iteration, fit):
+    plt.figure(figsize=(8,6))
+    plt.plot(range(1, iteration + 1), fit.history['loss'])
+    plt.plot(range(1, iteration +1 ), fit.history['acc'])
+    plt.show()
 
 
+    
 import keras
 import tensorflow as tf
 import tensorflow.keras as keras
@@ -69,14 +75,12 @@ print('Model 1 result loss: {:4f}'.format(model_loss))
 print('Model 1 final accuracy: {:4f}'.format(model_acc))
 printCostPlot(3, data_train1)
 
- 
 data_train2 = model2.fit(x_train, y_train, epochs=3)
 model2_loss, model2_acc = model2.evaluate(x_test, y_test)
 print(model2.summary())
 print('Model 2 result loss: {:4f}'.format(model2_loss))
 print('Model 2 final accuracy: {:4f}'.format(model2_acc))
 printCostPlot(3, data_train2)
-
 
 data_train3 = model3.fit(x_train, y_train, epochs=3)
 model3_loss, model3_acc = model3.evaluate(x_test, y_test)
@@ -86,24 +90,23 @@ print('Model 3 final accuracy: {:4f}'.format(model3_acc))
 printCostPlot(3, data_train3)
 
 
+#Predict
+predic1 = model.predict(x_test)
+predic2 = model2.predict(x_test)
+predic3 = model3.predict(x_test)
+
 print("\n\n Predict model1 ")
 plt.imshow(x_test[2],cmap=plt.cm.binary)
 plt.show()
-print("\n\n in the picture you can see :" + str(np.argmax(predic[2])))
+print("\n\n in the picture you can see :" + str(np.argmax(predic1[2])))
 
 print("\n\n Predict model2 ")
 plt.imshow(x_test[3],cmap=plt.cm.binary)
 plt.show()
-print("\n\n in the picture you can see :" + str(np.argmax(predic[3])))
+print("\n\n in the picture you can see :" + str(np.argmax(predic2[3])))
 
 print("\n\n Predict model3 ")
 plt.imshow(x_test[7],cmap=plt.cm.binary)
 plt.show()
-print("\n\n in the picture you can see :" + str(np.argmax(predic[7])))
-
-def printCostPlot(iteration, fit):
-    plt.figure(figsize=(8,6))
-    plt.plot(range(1, iteration + 1), fit.history['loss'])
-    plt.plot(range(1, iteration +1 ), fit.history['acc'])
-    plt.show()
+print("\n\n in the picture you can see :" + str(np.argmax(predic3[7])))
 
